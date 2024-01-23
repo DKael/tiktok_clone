@@ -22,6 +22,10 @@ class _VideoPostState extends State<VideoPost> {
   final VideoPlayerController _videoPlayerController =
       VideoPlayerController.asset("assets/videos/cat1.mp4");
 
+  bool _isPaused = false;
+
+  final Duration _animationDuration = const Duration(milliseconds: 200);
+
   void _onVideoChange() {
     if (_videoPlayerController.value.isInitialized) {
       if (_videoPlayerController.value.duration ==
@@ -55,6 +59,9 @@ class _VideoPostState extends State<VideoPost> {
     } else {
       _videoPlayerController.play();
     }
+    setState(() {
+      _isPaused = !_isPaused;
+    });
   }
 
   void _onVisibilityChanged(VisibilityInfo info) {
@@ -87,16 +94,21 @@ class _VideoPostState extends State<VideoPost> {
               onTap: _togglePause,
             ),
           ),
-          const Positioned.fill(
-              child: IgnorePointer(
-            child: Center(
-              child: FaIcon(
-                FontAwesomeIcons.play,
-                color: Colors.white,
-                size: Sizes.size52,
+          Positioned.fill(
+            child: IgnorePointer(
+              child: Center(
+                child: AnimatedOpacity(
+                  opacity: _isPaused ? 1 : 0,
+                  duration: _animationDuration,
+                  child: const FaIcon(
+                    FontAwesomeIcons.play,
+                    color: Colors.white,
+                    size: Sizes.size52,
+                  ),
+                ),
               ),
             ),
-          ))
+          ),
         ],
       ),
     );
