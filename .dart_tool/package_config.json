@@ -122,6 +122,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "readmore",
+      "rootUri": "file:///Users/kael/.pub-cache/hosted/pub.dev/readmore-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/kael/sdk/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -218,7 +224,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2024-01-23T20:11:44.040742Z",
+  "generated": "2024-01-28T20:30:50.887508Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
