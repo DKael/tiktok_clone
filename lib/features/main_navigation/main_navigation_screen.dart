@@ -14,7 +14,7 @@ class MainNavigationScreen extends StatefulWidget {
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   void _onTap(int index) {
     setState(() {
@@ -62,8 +62,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        //color: Colors.black,
-        color: _selectedIndex == 0 ? Colors.black : Colors.white,
+        shadowColor: Colors.black,
+        surfaceTintColor: Colors.white,
+        color: _selectedIndex == 0
+            ? Colors.black
+            : const Color.fromARGB(255, 250, 250, 250),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -13,8 +13,12 @@ class TikTokApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         //useMaterial3: false,
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFFE9435A),
+        ),
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFFE9435A),
         appBarTheme: const AppBarTheme(
